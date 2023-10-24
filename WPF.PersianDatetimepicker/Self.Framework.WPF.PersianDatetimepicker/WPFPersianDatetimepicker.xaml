@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Self.Framework.WPF.PersianDatetimepicker"
              mc:Ignorable="d" 
              Background="white"
-             d:DesignHeight="25" d:DesignWidth="130">
+             d:DesignHeight="30" d:DesignWidth="130" Padding="0" Margin="0">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -14,43 +14,45 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
-    <Button Name="ShowDatePopup" Click="ShowDatePopup_Click" FlowDirection="LeftToRight"
-                    Style="{StaticResource ButtonTransparent}">
-        <Grid MinWidth="125">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition Width="25"/>
-            </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" Name="Title" 
+    <Border BorderThickness="0.5" BorderBrush="Gray" Height="30">
+        <Button Name="ShowDatePopup" Click="ShowDatePopup_Click" FlowDirection="LeftToRight"
+                    Style="{StaticResource ButtonTransparent}" Padding="0" Margin="0">
+            <Grid MinWidth="125">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="23"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Name="Title" 
                        Style="{StaticResource TextBlockSelectDate}"
-               Text="تاریخی انتخاب نشده"/>
-            <Grid Grid.Column="1" Margin="0,-3,0,0">
-                <Border Style="{StaticResource BorderDatePicture}">
-                    <Grid Style="{StaticResource GridDatePicture}" >
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="6"/>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-                        <Border Grid.Row="0"  Style="{StaticResource BorderHeaderDatePicture}">
-                            <Grid Background="SkyBlue">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition Width="5"/>
-                                    <ColumnDefinition/>
-                                </Grid.ColumnDefinitions>
-                                <Canvas Height="5" Width="5" Grid.Column="1">
-                                    <Ellipse  Width="5"  Height="5" Fill="White"/>
-                                </Canvas>
-                            </Grid>
-                        </Border>
-                        <Label Grid.Row="1" Name="DateCenter" Content="15" Style="{StaticResource LabelDatePicture}"/>
-                    </Grid>
-                </Border>
-            </Grid>
-            <Popup x:Name="DatePopup" Placement="Bottom" StaysOpen="False"
+               Text="تاریخی انتخاب نشده" HorizontalAlignment="Left" Margin="6,0,0,0"/>
+                <Grid Grid.Column="1" Height="22">
+                    <Border Style="{StaticResource BorderDatePicture}">
+                        <Grid Style="{StaticResource GridDatePicture}" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="6"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Border Grid.Row="0"  Style="{StaticResource BorderHeaderDatePicture}">
+                                <Grid Background="SkyBlue">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="5"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Canvas Height="5" Width="5" Grid.Column="1">
+                                        <Ellipse  Width="5"  Height="5" Fill="White"/>
+                                    </Canvas>
+                                </Grid>
+                            </Border>
+                            <Label Grid.Row="1" Name="DateCenter" Content="15" Style="{StaticResource LabelDatePicture}"/>
+                        </Grid>
+                    </Border>
+                </Grid>
+                <Popup x:Name="DatePopup" Placement="Bottom" StaysOpen="False"
                    PlacementTarget="{Binding Path=ShowDatePopup}"
-                   MouseLeave="DatePopup_MouseLeave">
-            </Popup>
-        </Grid>
-    </Button>
+                   MouseLeave="DatePopup_MouseLeave" Grid.ColumnSpan="2">
+                </Popup>
+            </Grid>
+        </Button>
+    </Border>
 </UserControl>
