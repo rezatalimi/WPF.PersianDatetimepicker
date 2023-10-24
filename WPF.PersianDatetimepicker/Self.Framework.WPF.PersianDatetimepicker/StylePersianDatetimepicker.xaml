@@ -1,0 +1,184 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style  x:Key="ButtonTransparent" TargetType="Button">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="MinHeight" Value="28"/>
+        <Setter Property="MaxHeight" Value="40"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="Transparent" BorderThickness="1">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="Transparent"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style  x:Key="ButtonTransparentNav" TargetType="Button">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="Transparent" BorderThickness="1">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="Transparent"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style  x:Key="GridDatePicture" TargetType="Grid">
+        <Setter Property="Margin" Value="0" />
+    </Style>
+    <Style  x:Key="BorderDatePicture" TargetType="Border">
+        <Setter Property="BorderBrush" Value="Black" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="0 0 3 3" />
+    </Style>
+    <Style  x:Key="BorderHeaderDatePicture" TargetType="Border">
+        <Setter Property="BorderBrush" Value="Black" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Width" Value="25" />
+        <Setter Property="BorderThickness" Value="0 0 0 1" />
+    </Style>
+    <Style  x:Key="BorderShowDates" TargetType="Border">
+        <Setter Property="FlowDirection" Value="RightToLeft" />
+        <Setter Property="BorderBrush" Value="Black" />
+        <Setter Property="BorderThickness" Value="1" />
+    </Style>
+    <Style  x:Key="BorderCurrentDay" TargetType="Border">
+        <Setter Property="BorderBrush" Value="#f28d09" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Border.Background" Value="#6fa5fc"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style  x:Key="ButtonOtherMobthDaies" TargetType="Button">
+        <Setter Property="Background" Value="#e2e6ea" />
+    </Style>
+    <Style  x:Key="TextBlockSelectDate" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="10" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+    </Style>
+    <Style  x:Key="SelectDateNumber" TargetType="TextBlock">
+        <Setter Property="Width" Value="80" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+    </Style>
+    <Style  x:Key="HeaderDate" TargetType="Label">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Height" Value="30" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+    </Style>
+    <Style  x:Key="DaysDate" TargetType="Label">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Height" Value="28" />
+        <Setter Property="Width" Value="25" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+    </Style>
+    <Style  x:Key="DayDate" TargetType="Button">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Height" Value="30" />
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Margin" Value="0"/>
+        <Style.Triggers>
+            <DataTrigger  Binding="{Binding IsMouseOver, RelativeSource={RelativeSource AncestorType=Border}}"  Value="True">
+                <Setter Property="Border.Background" Value="#6fa5fc"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+    <Style  x:Key="BorderDayDate" TargetType="Border">
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Border.Background" Value="#6fa5fc"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style  x:Key="ButtonGoTo" TargetType="Button">
+        <Setter Property="Background" Value="#e1e1e2"/>
+        <Setter Property="MinHeight" Value="28"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="#7f7e7e" BorderThickness="1">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#707070"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style  x:Key="LabelDatePicture" TargetType="Label">
+        <Setter Property="FontSize" Value="10" />
+        <Setter Property="Margin" Value="0 -6 0 0" />
+        <Setter Property="Height" Value="21" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+    </Style>
+    <Style  x:Key="DaysInDate" TargetType="ColumnDefinition">
+        <Setter Property="ColumnDefinition.Width" Value="30" />
+    </Style>
+    <Style  x:Key="LevelDate" TargetType="ColumnDefinition">
+        <Setter Property="ColumnDefinition.Width" Value="28" />
+    </Style>
+    <Style  x:Key="LevelMonthDate" TargetType="ColumnDefinition">
+        <Setter Property="ColumnDefinition.Width" Value="55" />
+    </Style>
+    <Style  x:Key="LevelMonthSpaceDate" TargetType="ColumnDefinition">
+        <Setter Property="ColumnDefinition.Width" Value="5" />
+    </Style>
+    <Style  x:Key="HeaderDateNav" TargetType="ColumnDefinition">
+        <Setter Property="ColumnDefinition.Width" Value="50" />
+    </Style>
+    <Style  x:Key="HeaderMonthDateNav" TargetType="ColumnDefinition">
+        <Setter Property="ColumnDefinition.Width" Value="30" />
+    </Style>
+    <Style  x:Key="LevelGrid" TargetType="Grid">
+        <Setter Property="Margin" Value="13,0,0,0" />
+    </Style>
+    <Style  x:Key="LevelMonthGrid" TargetType="Grid">
+        <Setter Property="Margin" Value="0,0,0,0" />
+        <Setter Property="Width" Value="175" />
+    </Style>
+    <Style  x:Key="DaysInDateGrid" TargetType="Grid">
+        <Setter Property="Margin" Value="10,0,0,0" />
+    </Style>
+    <Style  x:Key="HeaderDateNavigationGrid" TargetType="Grid">
+        <Setter Property="Background" Value="#e1e1e2" />
+    </Style>
+    <Style  x:Key="LabelDateContent" TargetType="Label">
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+    </Style>
+</ResourceDictionary>

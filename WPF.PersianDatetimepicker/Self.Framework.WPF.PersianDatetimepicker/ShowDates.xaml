@@ -1,0 +1,325 @@
+﻿<UserControl x:Class="Self.Framework.WPF.PersianDatetimepicker.ShowDates"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Self.Framework.WPF.PersianDatetimepicker"         
+             mc:Ignorable="d" Background="White"
+             d:DesignHeight="250" d:DesignWidth="230">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Self.Framework.WPF.PersianDatetimepicker;component/StylePersianDatetimepicker.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Self.Framework.WPF.PersianDatetimepicker;component/IconPagingNext.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Self.Framework.WPF.PersianDatetimepicker;component/IconPagingPrevious.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Border Name="BorderShowDates" Style="{StaticResource BorderShowDates}">
+        <Grid Name="MainGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="28"/>
+                <RowDefinition Height="27"/>
+                <RowDefinition Height="27"/>
+                <RowDefinition Height="27"/>
+                <RowDefinition Height="27"/>
+                <RowDefinition Height="27"/>
+                <RowDefinition Height="27"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <Grid x:Name="HeaderDateNavigation" Grid.Row="0" Style="{StaticResource HeaderDateNavigationGrid}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Style="{StaticResource HeaderDateNav}"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Style="{StaticResource HeaderDateNav}"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Name="Back" Click="Back_Click"
+                    Style="{StaticResource ButtonTransparentNav}">
+                    <Image Width="30" Height="30" Margin="-20,1,0,0">
+                        <Image.Style>
+                            <Style TargetType="Image">
+                                <Setter Property="Source" Value="{StaticResource ResourceKey=Paging_Previous_Normal}" />
+                                <Style.Triggers>
+                                    <DataTrigger  Binding="{Binding IsMouseOver, RelativeSource={RelativeSource AncestorType=Button}}"  Value="True">
+                                        <Setter Property="Source" Value="{StaticResource ResourceKey=Paging_Previous_MouseEnter}" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Style>
+                    </Image>
+                </Button>
+                <Label Grid.Column="1" Name="DisplayDate" Style="{StaticResource HeaderDate}" />
+                <Button Grid.Column="2" Name="Next" Click="Next_Click"
+                    Style="{StaticResource ButtonTransparentNav}">
+                    <Image Width="30" Height="30" Margin="0,1,0,0">
+                        <Image.Style>
+                            <Style TargetType="Image">
+                                <Setter Property="Source" Value="{StaticResource ResourceKey=Paging_Next_Normal}" />
+                                <Style.Triggers>
+                                    <DataTrigger  Binding="{Binding IsMouseOver, RelativeSource={RelativeSource AncestorType=Button}}"  Value="True">
+                                        <Setter Property="Source" Value="{StaticResource ResourceKey=Paging_Next_MouseEnter}" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Style>
+                    </Image>
+                </Button>
+            </Grid>
+            <Grid  x:Name="DaysInDate" Grid.Row="1"  Style="{StaticResource DaysInDateGrid}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Style="{StaticResource DaysInDate}"/>
+                    <ColumnDefinition Style="{StaticResource DaysInDate}"/>
+                    <ColumnDefinition Style="{StaticResource DaysInDate}"/>
+                    <ColumnDefinition Style="{StaticResource DaysInDate}"/>
+                    <ColumnDefinition Style="{StaticResource DaysInDate}"/>
+                    <ColumnDefinition Style="{StaticResource DaysInDate}"/>
+                    <ColumnDefinition Style="{StaticResource DaysInDate}"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="ش" Style="{StaticResource DaysDate}">
+                    <Label.ToolTip>
+                        <ToolTip>
+                            <TextBlock Text="شنبه"></TextBlock>
+                        </ToolTip>
+                    </Label.ToolTip>
+                </Label>
+                <Label Grid.Column="1" Content="ی" Style="{StaticResource DaysDate}">
+                    <Label.ToolTip>
+                        <ToolTip>
+                            <TextBlock Text="یک شنبه"></TextBlock>
+                        </ToolTip>
+                    </Label.ToolTip>
+                </Label>
+                <Label Grid.Column="2" Content="د" Style="{StaticResource DaysDate}">
+                    <Label.ToolTip>
+                        <ToolTip>
+                            <TextBlock Text="دو شنبه"></TextBlock>
+                        </ToolTip>
+                    </Label.ToolTip>
+                </Label>
+                <Label Grid.Column="3" Content="س" Style="{StaticResource DaysDate}">
+                    <Label.ToolTip>
+                        <ToolTip>
+                            <TextBlock Text="سه شنبه"></TextBlock>
+                        </ToolTip>
+                    </Label.ToolTip>
+                </Label>
+                <Label Grid.Column="4" Content="چ" Style="{StaticResource DaysDate}">
+                    <Label.ToolTip>
+                        <ToolTip>
+                            <TextBlock Text="چهار شنبه"></TextBlock>
+                        </ToolTip>
+                    </Label.ToolTip>
+                </Label>
+                <Label Grid.Column="5" Content="پ" Style="{StaticResource DaysDate}">
+                    <Label.ToolTip>
+                        <ToolTip>
+                            <TextBlock Text="پنج شنبه"></TextBlock>
+                        </ToolTip>
+                    </Label.ToolTip>
+                </Label>
+                <Label Grid.Column="6" Content="ج" Style="{StaticResource DaysDate}">
+                    <Label.ToolTip>
+                        <ToolTip>
+                            <TextBlock Text="جمعه"></TextBlock>
+                        </ToolTip>
+                    </Label.ToolTip>
+                </Label>
+            </Grid>
+            <Grid  x:Name="Level1" Grid.Row="2"  Style="{StaticResource LevelGrid}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                </Grid.ColumnDefinitions>
+                <Border Name="Border_1_1" Grid.Column="0">
+                    <Button Name="Button_1_1" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+                <Border Name="Border_1_2" Grid.Column="1">
+                    <Button Name="Button_1_2" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+                <Border Name="Border_1_3" Grid.Column="2">
+                    <Button Name="Button_1_3" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+                <Border Name="Border_1_4" Grid.Column="3">
+                    <Button Name="Button_1_4" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+                <Border Name="Border_1_5" Grid.Column="4">
+                    <Button Name="Button_1_5" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+                <Border Name="Border_1_6" Grid.Column="5">
+                    <Button Name="Button_1_6" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+                <Border Name="Border_1_7" Grid.Column="6">
+                    <Button Name="Button_1_7" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+            </Grid>
+            <Grid  x:Name="Level2" Grid.Row="3"  Style="{StaticResource LevelGrid}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                </Grid.ColumnDefinitions>
+                <Border Name="Border_2_1" Grid.Column="0">
+                    <Button Name="Button_2_1" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+                <Border Name="Border_2_2" Grid.Column="1">
+                    <Button Name="Button_2_2" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+                <Border Name="Border_2_3" Grid.Column="2">
+                    <Button Name="Button_2_3" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+                <Border Name="Border_2_4" Grid.Column="3">
+                    <Button Name="Button_2_4" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+                <Border Name="Border_2_5" Grid.Column="4">
+                    <Button Name="Button_2_5" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+                <Border Name="Border_2_6" Grid.Column="5">
+                    <Button Name="Button_2_6" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+                <Border Name="Border_2_7" Grid.Column="6">
+                    <Button Name="Button_2_7" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+            </Grid>
+            <Grid  x:Name="Level3" Grid.Row="4"  Style="{StaticResource LevelGrid}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                </Grid.ColumnDefinitions>
+                <Border Name="Border_3_1" Grid.Column="0">
+                    <Button Name="Button_3_1" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+                <Border Name="Border_3_2" Grid.Column="1">
+                    <Button Name="Button_3_2" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+                <Border Name="Border_3_3" Grid.Column="2">
+                    <Button Name="Button_3_3" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+                <Border Name="Border_3_4" Grid.Column="3">
+                    <Button Name="Button_3_4" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+                <Border Name="Border_3_5" Grid.Column="4">
+                    <Button Name="Button_3_5" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+                <Border Name="Border_3_6" Grid.Column="5">
+                    <Button Name="Button_3_6" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+                <Border Name="Border_3_7" Grid.Column="6">
+                    <Button Name="Button_3_7" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+            </Grid>
+            <Grid  x:Name="Level4" Grid.Row="5"  Style="{StaticResource LevelGrid}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                </Grid.ColumnDefinitions>
+                <Border Name="Border_4_1" Grid.Column="0">
+                    <Button Name="Button_4_1" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+                <Border Name="Border_4_2" Grid.Column="1">
+                    <Button Name="Button_4_2" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+                <Border Name="Border_4_3" Grid.Column="2">
+                    <Button Name="Button_4_3" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+                <Border Name="Border_4_4" Grid.Column="3">
+                    <Button Name="Button_4_4" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+                <Border Name="Border_4_5" Grid.Column="4">
+                    <Button Name="Button_4_5" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+                <Border Name="Border_4_6" Grid.Column="5">
+                    <Button Name="Button_4_6" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+                <Border Name="Border_4_7" Grid.Column="6">
+                    <Button Name="Button_4_7" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+            </Grid>
+            <Grid  x:Name="Level5" Grid.Row="6"  Style="{StaticResource LevelGrid}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                </Grid.ColumnDefinitions>
+                <Border Name="Border_5_1" Grid.Column="0" Style="{StaticResource BorderDayDate}">
+                    <Button Name="Button_5_1" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+                <Border Name="Border_5_2" Grid.Column="1" Style="{StaticResource BorderDayDate}">
+                    <Button Name="Button_5_2" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+                <Border Name="Border_5_3" Grid.Column="2" Style="{StaticResource BorderDayDate}">
+                    <Button Name="Button_5_3" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+                <Border Name="Border_5_4" Grid.Column="3" Style="{StaticResource BorderDayDate}">
+                    <Button Name="Button_5_4" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+                <Border Name="Border_5_5" Grid.Column="4" Style="{StaticResource BorderDayDate}">
+                    <Button Name="Button_5_5" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+                <Border Name="Border_5_6" Grid.Column="5" Style="{StaticResource BorderDayDate}">
+                    <Button Name="Button_5_6" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+                <Border Name="Border_5_7" Grid.Column="6" Style="{StaticResource BorderDayDate}">
+                    <Button Name="Button_5_7" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+            </Grid>
+            <Grid  x:Name="Level6" Grid.Row="7" Style="{StaticResource LevelGrid}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                    <ColumnDefinition Style="{StaticResource LevelDate}"/>
+                </Grid.ColumnDefinitions>
+                <Border Name="Border_6_1" Grid.Column="0" Style="{StaticResource BorderDayDate}">
+                    <Button Name="Button_6_1" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+                <Border Name="Border_6_2" Grid.Column="1" Style="{StaticResource BorderDayDate}">
+                    <Button Name="Button_6_2" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+                <Border Name="Border_6_3" Grid.Column="2" Style="{StaticResource BorderDayDate}">
+                    <Button Name="Button_6_3" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+                <Border Name="Border_6_4" Grid.Column="3" Style="{StaticResource BorderDayDate}">
+                    <Button Name="Button_6_4" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+                <Border Name="Border_6_5" Grid.Column="4" Style="{StaticResource BorderDayDate}">
+                    <Button Name="Button_6_5" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+                <Border Name="Border_6_6" Grid.Column="5" Style="{StaticResource BorderDayDate}">
+                    <Button Name="Button_6_6" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+                <Border Name="Border_6_7" Grid.Column="6" Style="{StaticResource BorderDayDate}">
+                    <Button Name="Button_6_7" Style="{StaticResource DayDate}" Click="Level_Click"/>
+                </Border>
+            </Grid>
+            <Button Grid.Row="8" Name="GoToDay" Content="برو به امروز" 
+                Style="{StaticResource ButtonGoTo}" Click="GoToDay_Click"/>
+        </Grid>
+    </Border>
+</UserControl>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="ShowDates.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="WPFPersianDatetimepicker.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="IconPagingNext.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="IconPagingPrevious.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ShowMonths.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ShowDates.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="WPFPersianDatetimepicker.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

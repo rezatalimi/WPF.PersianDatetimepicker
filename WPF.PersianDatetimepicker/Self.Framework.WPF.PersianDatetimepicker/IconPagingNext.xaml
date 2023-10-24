@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:local="clr-namespace:Self.Framework.WPF.PersianDatetimepicker">
+    <DrawingImage x:Key="Paging_Next_Normal">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V752 H752 V0 H0 Z">
+                <DrawingGroup Opacity="1" Transform="0.1,0,0,-0.1,0,752">
+                    <GeometryDrawing Brush="#FF000000" Geometry="F1 M752,752z M0,0z M2432,6115C2327,6086,2257,6035,2214,5957L2185,5905 2185,3760 2185,1615 2207,1574C2238,1516 2321,1445 2388,1419 2430,1403 2467,1397 2530,1397 2638,1396 2671,1412 2805,1523 4145,2637 5196,3514 5237,3553 5359,3671 5372,3841 5268,3954 5203,4024 2701,6077 2653,6100 2596,6127 2498,6133 2432,6115z" />
+                </DrawingGroup>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    <DrawingImage x:Key="Paging_Next_MouseEnter">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V752 H752 V0 H0 Z">
+                <DrawingGroup Opacity="1" Transform="0.1,0,0,-0.1,0,752">
+                    <GeometryDrawing Brush="#707070" Geometry="F1 M752,752z M0,0z M2432,6115C2327,6086,2257,6035,2214,5957L2185,5905 2185,3760 2185,1615 2207,1574C2238,1516 2321,1445 2388,1419 2430,1403 2467,1397 2530,1397 2638,1396 2671,1412 2805,1523 4145,2637 5196,3514 5237,3553 5359,3671 5372,3841 5268,3954 5203,4024 2701,6077 2653,6100 2596,6127 2498,6133 2432,6115z" />
+                </DrawingGroup>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+</ResourceDictionary>
+
