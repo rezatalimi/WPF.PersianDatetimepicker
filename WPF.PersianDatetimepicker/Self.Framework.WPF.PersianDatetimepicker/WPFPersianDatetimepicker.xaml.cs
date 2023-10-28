@@ -11,7 +11,7 @@ namespace Self.Framework.WPF.PersianDatetimepicker
     {
         public event EventHandler<EventArgs> SelectedDateChanged;
 
-        public DateTime? SelectedDate { get; set; }
+        public DateTime? SelectedDate { get; private set; }
 
         public bool ShowOnlyMonth { get; set; }
 
@@ -34,13 +34,38 @@ namespace Self.Framework.WPF.PersianDatetimepicker
             showMonths.ApplyDate = new ShowMonths.ShowDateToLable(ChangeMonthDateLable);
 
             DatePopup.HorizontalOffset = DatePopup.HorizontalOffset - 70;
+
+            Clear();
+
+            DataContext = this;
+        }
+
+        public void Clear()
+        {
+            SelectedDate = null;
+            Title.Text = "تاریخی انتخاب نشده";
+            Title.Style = (Style)FindResource("TextBlockSelectDate");
+        }
+
+        public void SetSelectedDate(DateTime dateTime)
+        {
+            SelectedDate = dateTime;
+
+            if (ShowOnlyMonth)
+            {
+                ChangeMonthDateLable();
+            }
+            else
+            {
+                ChangeDaysDateLable();
+            }
         }
 
         private void ShowDatePopup_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             DatePopup.IsOpen = false;
 
-            DatePopup.Child = ShowOnlyMonth ==  true ? showMonths : showDaysDate;
+            DatePopup.Child = ShowOnlyMonth == true ? showMonths : showDaysDate;
 
             DatePopup.Width = ShowOnlyMonth == true ? 200 : 230;
 
@@ -70,7 +95,7 @@ namespace Self.Framework.WPF.PersianDatetimepicker
 
                 DatePopup.IsOpen = false;
 
-                if(SelectedDateChanged != null)
+                if (SelectedDateChanged != null)
                 {
                     SelectedDateChanged(this, new EventArgs());
                 }

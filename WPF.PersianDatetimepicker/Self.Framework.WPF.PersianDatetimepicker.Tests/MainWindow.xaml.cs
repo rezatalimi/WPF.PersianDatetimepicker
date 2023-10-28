@@ -11,5 +11,10 @@ namespace Self.Framework.WPF.PersianDatetimepicker.Tests
         {
             InitializeComponent();
         }
+
+        private void Clear_Click(object sender, RoutedEventArgs e)
+        {
+            PersianDatetimepicker.Clear();
+        }
     }
 }
