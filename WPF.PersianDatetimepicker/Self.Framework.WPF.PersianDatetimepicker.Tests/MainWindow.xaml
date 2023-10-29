@@ -16,12 +16,14 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
             <ColumnDefinition/>
+            <ColumnDefinition Width="130"/>
             <ColumnDefinition Width="70"/>
             <ColumnDefinition Width="130"/>
             <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
         <persiandatetimepicker:WPFPersianDatetimepicker Name="PersianDatetimepicker" 
-                ShowOnlyMonth="False" Grid.Row="1" Grid.Column="3"/>
-        <Button Name="Clear" Content="پاک کردن" Click="Clear_Click"  Grid.Row="1" Grid.Column="2" Height="28"/>
+                ShowOnlyMonth="False" Grid.Row="1" Grid.Column="4"/>
+        <Button Name="Clear" Content="پاک کردن" Click="Clear_Click"  Grid.Row="1" Grid.Column="3" Height="28"/>
+        <DatePicker Name="DatePicker"   Grid.Row="1" Grid.Column="2"  Height="28" SelectedDateChanged="DatePicker_SelectedDateChanged" />
     </Grid>
 </Window>

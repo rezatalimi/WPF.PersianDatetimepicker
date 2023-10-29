@@ -16,5 +16,10 @@ namespace Self.Framework.WPF.PersianDatetimepicker.Tests
         {
             PersianDatetimepicker.Clear();
         }
+
+        private void DatePicker_SelectedDateChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            PersianDatetimepicker.SetSelectedDate(DatePicker.SelectedDate.Value);
+        }
     }
 }

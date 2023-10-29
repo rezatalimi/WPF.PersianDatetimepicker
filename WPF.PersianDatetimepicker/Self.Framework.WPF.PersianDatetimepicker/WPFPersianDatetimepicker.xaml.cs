@@ -82,12 +82,15 @@ namespace Self.Framework.WPF.PersianDatetimepicker
             if (showDaysDate.SelectedDate.HasValue)
             {
                 SelectedDate = showDaysDate.SelectedDate;
+            }
 
-                var year = persianCalendar.GetYear(showDaysDate.SelectedDate.Value);
+            if (SelectedDate.HasValue)
+            {
+                var year = persianCalendar.GetYear(SelectedDate.Value);
 
-                var month = persianCalendar.GetMonth(showDaysDate.SelectedDate.Value);
+                var month = persianCalendar.GetMonth(SelectedDate.Value);
 
-                var day = persianCalendar.GetDayOfMonth(showDaysDate.SelectedDate.Value);
+                var day = persianCalendar.GetDayOfMonth(SelectedDate.Value);
 
                 Title.Text = year + " - " + month + " - " + day;
 
@@ -100,6 +103,7 @@ namespace Self.Framework.WPF.PersianDatetimepicker
                     SelectedDateChanged(this, new EventArgs());
                 }
             }
+
         }
 
         private void ChangeMonthDateLable()
@@ -107,10 +111,13 @@ namespace Self.Framework.WPF.PersianDatetimepicker
             if (showMonths.SelectedDate.HasValue)
             {
                 SelectedDate = showMonths.SelectedDate;
+            }
 
-                var year = persianCalendar.GetYear(showMonths.SelectedDate.Value);
+            if (SelectedDate.HasValue)
+            {
+                var year = persianCalendar.GetYear(SelectedDate.Value);
 
-                var month = persianCalendar.GetMonth(showMonths.SelectedDate.Value);
+                var month = persianCalendar.GetMonth(SelectedDate.Value);
 
                 var monthName = PersianMonths.GetMonthByNumber(month);
 
