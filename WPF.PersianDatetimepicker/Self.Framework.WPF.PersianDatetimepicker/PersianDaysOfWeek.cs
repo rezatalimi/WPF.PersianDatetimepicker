@@ -2,45 +2,45 @@
 {
     public class PersianDaysOfWeek
     {
-        public static PersianDayOfWeek Shanbe { get;private set; } = new PersianDayOfWeek(1,"شنبه","ش");
-        public static PersianDayOfWeek YekSahnbe { get;private set; } = new PersianDayOfWeek(2,"یک شنبه","ی");
-        public static PersianDayOfWeek DoSahnbe { get;private set; } = new PersianDayOfWeek(3,"دو شنبه","ی");
-        public static PersianDayOfWeek SeSahnbe { get;private set; } = new PersianDayOfWeek(4,"سه شنبه","ی");
-        public static PersianDayOfWeek CheharSahnbe { get;private set; } = new PersianDayOfWeek(5,"چهار شنبه","ی");
-        public static PersianDayOfWeek PanjSahnbe { get;private set; } = new PersianDayOfWeek(6,"پنج شنبه","ی");
-        public static PersianDayOfWeek Jome { get;private set; } = new PersianDayOfWeek(7,"جمعه","ی");
+        public static PersianDayOfWeek Shanbe { get; private set; } = new PersianDayOfWeek(1, "شنبه", "ش");
+        public static PersianDayOfWeek Yekshanbe { get; private set; } = new PersianDayOfWeek(2, "یک شنبه", "ی");
+        public static PersianDayOfWeek Doshanbe { get; private set; } = new PersianDayOfWeek(3, "دو شنبه", "ی");
+        public static PersianDayOfWeek SeShanbe { get; private set; } = new PersianDayOfWeek(4, "سه شنبه", "ی");
+        public static PersianDayOfWeek ChaahaarShanbe { get; private set; } = new PersianDayOfWeek(5, "چهار شنبه", "ی");
+        public static PersianDayOfWeek PanjShanbe { get; private set; } = new PersianDayOfWeek(6, "پنج شنبه", "ی");
+        public static PersianDayOfWeek Jome { get; private set; } = new PersianDayOfWeek(7, "جمعه", "ی");
 
         public static List<PersianDayOfWeek> DaysOfWeek = new List<PersianDayOfWeek>
         {
-            Shanbe, YekSahnbe, DoSahnbe, SeSahnbe, CheharSahnbe, PanjSahnbe, Jome
+            Shanbe, Yekshanbe, Doshanbe, SeShanbe, ChaahaarShanbe, PanjShanbe, Jome
         };
 
         public static PersianDayOfWeek GetDayOfWeek(DayOfWeek dayOfWeekEnum)
         {
-            PersianDayOfWeek result = PersianDaysOfWeek.Shanbe;
+            PersianDayOfWeek result = Shanbe;
 
             switch (dayOfWeekEnum)
             {
                 case DayOfWeek.Sunday:
-                    result = PersianDaysOfWeek.YekSahnbe;
+                    result = Yekshanbe;
                     break;
                 case DayOfWeek.Monday:
-                    result = PersianDaysOfWeek.DoSahnbe;
+                    result = Doshanbe;
                     break;
                 case DayOfWeek.Tuesday:
-                    result = PersianDaysOfWeek.SeSahnbe;
+                    result = SeShanbe;
                     break;
                 case DayOfWeek.Wednesday:
-                    result = PersianDaysOfWeek.CheharSahnbe;
+                    result = ChaahaarShanbe;
                     break;
                 case DayOfWeek.Thursday:
-                    result = PersianDaysOfWeek.PanjSahnbe;
+                    result = PanjShanbe;
                     break;
                 case DayOfWeek.Friday:
-                    result = PersianDaysOfWeek.Jome;
+                    result = Jome;
                     break;
                 case DayOfWeek.Saturday:
-                    result = PersianDaysOfWeek.Shanbe;
+                    result = Shanbe;
                     break;
             }
 
